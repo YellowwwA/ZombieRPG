@@ -1,0 +1,12 @@
+Equipment	Knife	칼	1	FALSE	0
+Equipment	Katana	장검	1	FALSE	1
+Equipment	Bat	방망이	1	FALSE	2
+Equipment	Sword	검	1	FALSE	3
+Use	HP potion	체력 물약	1	FALSE	4
+Use	MP potion	마력 물약	1	FALSE	5
+Quest	Key	열쇠	1	FALSE	6
+Quest	Invisible Cape	투명망토	1	FALSE	7
+Quest	Zombie Odor Spray	좀비 향 스프레이	1	FALSE	8
+Etc	Gold	금	1	FALSE	9
+Equipment	Axe	도끼	1	FALSE	10
+Etc	Ring	잃어버렸던 소중한 반지	1	FALSE	11
