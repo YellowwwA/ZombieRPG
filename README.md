@@ -13,4 +13,4 @@ Unity로 제작한 모바일 RPG게임 포트폴리오입니다.
 + <https://youtu.be/WZ4GRTYmpBM>
 
 ## 기술서
-+ <https://docs.google.com/document/d/1bxh3bHipb5e4YL8N-6oeI_7NxWteofKzP5rYe5YdfsY/edit>
++ <https://docs.google.com/document/d/1bxh3bHipb5e4YL8N-6oeI_7NxWteofKzP5rYe5YdfsY/edit?usp=sharing>
