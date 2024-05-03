@@ -45,17 +45,11 @@ public class DialogueManager : MonoBehaviour
             questManager.CheckQuest(id);
             if (questTalkIndex < 40)
                 Debug.Log(questManager.CheckQuest());
-            //if (!questManager.questList.ContainsKey(questManager.questId))
-            //Debug.Log(questManager.CheckQuest(id));
-
             return;
         }
         
         talkText.text = talkData;
         isAction = true;
-        //
-
-        //
         talkIndex++;
     }
 }

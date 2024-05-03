@@ -91,7 +91,6 @@ public class PlayerStat : MonoBehaviourPunCallbacks, IPunObservable
                 clone.transform.SetParent(parent.transform);
             }
         }
-
     }
 
     // Update is called once per frame
@@ -104,7 +103,6 @@ public class PlayerStat : MonoBehaviourPunCallbacks, IPunObservable
         //mpSlider.value = currentMp;
         hpSlider.transform.LookAt(UIdirection);
 
-
         if (currentExp >= needExp[character_Lv])
         {
             character_Lv++;
@@ -116,20 +114,8 @@ public class PlayerStat : MonoBehaviourPunCallbacks, IPunObservable
             atk++;
             def++;
         }
-        //current_time -= Time.deltaTime;
-        /*
-        if(current_time <= 0)
-        {
-            if(recover_hp > 0)
-            {
-                if (currentHp + recover_hp <= hp)
-                    currentHp += recover_hp;
-                else
-                    currentHp = hp;
-            }
-            current_time = time;
-        }*/
     }
+
     public void RecoverHp(int num)
     {
         if (currentHp + num <= hp)

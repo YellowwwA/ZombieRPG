@@ -70,6 +70,7 @@ public class EnemyStat : MonoBehaviourPunCallbacks, IPunObservable
 
         healthBarFilled.fillAmount = (float)currentHp / hp;
         healthBarBackground.SetActive(true);
+
         //Debug.Log(currentHp);
         StopAllCoroutines();
         StartCoroutine(WaitCoroutine());

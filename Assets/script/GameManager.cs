@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
             string[] row = line[i].Split('\t');
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE", row[5])); // 각 아이템별 정보(카테고리, 이름, 설명, 개수, 보유여부)로 생성자 호출
             //MyItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE", row[5]));
-
         }
         colorA = TabImage[0].GetComponent<Image>().color;
         colorB = TabImage[1].GetComponent<Image>().color;
@@ -67,23 +66,17 @@ public class GameManager : MonoBehaviour
 
     public void GetItem(int itemID, int _count)
     {
-        //Item GetItemA = new Item("Equipment", "Sword", "칼", "3", true, 0); //주운 아이템 이 변수 이름에 저장하기
-        //나중에 아이템 줍기 시 이 함수 실행되게 하기
-
         Item curItem = MyItemList.Find(x => int.Parse(x.Index) == itemID);
-        Debug.Log(curItem);
         if(curItem != null)
         {
             curItem.Number = (int.Parse(curItem.Number) + _count).ToString();
-            Debug.Log("1111");
         }
         else
         {
-            Debug.Log("2222");
             Item curAllItem = AllItemList.Find(x => int.Parse(x.Index) == itemID);
+
             if(curAllItem != null)
             {
-                Debug.Log("3333");
                 curAllItem.Number = (int.Parse(curAllItem.Number) + 1).ToString();
                 MyItemList.Add(curAllItem);
             }
@@ -92,7 +85,7 @@ public class GameManager : MonoBehaviour
         Save();
     }
 
-    public void RemoveItem(int itemID) //나중에 퀘스트 완료 시 이 함수 호출하기
+    public void RemoveItem(int itemID) // 아이템 퀘스트 완료 시 이 함수 호출
     {
         Item curItem = MyItemList.Find(x => int.Parse(x.Index) == itemID);
         if(curItem != null)
@@ -125,7 +118,7 @@ public class GameManager : MonoBehaviour
         }
         else if(curType == "Use") // 소비 아이템이면 개수 하나 줄이기
         {
-            if(int.Parse(CurItem.Index) == 4)
+            if(int.Parse(CurItem.Index) == 4) // hp potion이라면
             {
                 if (int.Parse(CurItem.Number) > 1)
                     CurItem.Number = (int.Parse(CurItem.Number) - 1).ToString();
@@ -149,15 +142,10 @@ public class GameManager : MonoBehaviour
                 else
                     MyItemList.Remove(CurItem);
             }
-
         }
-        else // 퀘스트, 기타 아이템이면 (장착)선택 옵션 없애기
+        else
         {
-            //CurItem.isUsing = !CurItem.isUsing;
-            //if(UsingItem != null)
-            //    UsingItem.isUsing =false;
         }
-
         Save();
     }
 
@@ -182,7 +170,6 @@ public class GameManager : MonoBehaviour
                     UsingImage[i].SetActive(CurItemList[i].isUsing);
                     Numbers[i].SetActive(false);
                 }
-
                 else if (tabName == "Use")
                 {
                     UsingImage[i].SetActive(false);
@@ -214,7 +201,7 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < TabImage.Length; i++)
         {
-            TabImage[i].color = i == tabNum ? colorA : colorB; // 이부분 선택된 탭에 따라 이미지 교체 대신 투명도 조절로 바꾸기
+            TabImage[i].color = i == tabNum ? colorA : colorB; // 선택된 탭에 따라 투명도 조절
 
         }
     }

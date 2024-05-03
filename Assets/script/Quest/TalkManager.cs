@@ -39,35 +39,19 @@ public class TalkManager : MonoBehaviour
                 //퀘스트 맨 처음 대사마저 없을 때
                 //기본 대사를 가지고 온다.
                 if (talkIndex == talkData[id - id % 100].Length)
-                {
-                    Debug.Log("111111");
                     return null;
-                }
                 else
-                {
-                    Debug.Log("222222");
                     return talkData[id - id % 100][talkIndex];
-                }
-
             }
             else
             {
                 //해당 퀘스트 진행 순서 대사가 없을 때
                 //퀘스트 맨 처음 대사를 가져온다.
                 if (talkIndex == talkData[id - id % 10].Length)
-                {
-                    Debug.Log("33333");
                     return null;
-                }
                 else
-                {
-                    Debug.Log("44444");
                     return talkData[id - id % 10][talkIndex];
-                   
-                }
-
             }
-
         }
         else
         {
@@ -76,6 +60,5 @@ public class TalkManager : MonoBehaviour
             else
                 return talkData[id][talkIndex];
         }
-
     }
 }

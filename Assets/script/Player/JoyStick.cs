@@ -28,28 +28,23 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     void Update()
     {
         if (isTouch)
-        {
             go_Player.transform.position += movePosition;
-        }
-        //anim.SetBool("isWalk", movePosition != Vector3.zero);
-        //anim.SetBool("isRun")
-        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 value = eventData.position - (Vector2)rect_Background.position;
 
-        value = Vector2.ClampMagnitude(value, radius/2);  // 조이스틱이 조이스틱백그라운드 이미지를 벗어나지 않도록 범위만큼 가두기
+        // 조이스틱이 조이스틱백그라운드 이미지를 벗어나지 않도록 범위만큼 가두기
+        value = Vector2.ClampMagnitude(value, radius/2);  
         rect_Joystick.localPosition = value;
 
-        float distance = Vector2.Distance(rect_Background.position, rect_Joystick.position) / radius;  // 조이스틱이 중심에서 벗어나는 거리와 플레이어 속도가 비례함
+        // 조이스틱이 중심에서 벗어나는 거리와 플레이어 속도가 비례함
+        float distance = Vector2.Distance(rect_Background.position, rect_Joystick.position) / radius;  
         
         value = value.normalized; // 방향만 뽑아냄
-        movePosition = new Vector3(value.x * moveSpeed * 0.0015f * distance * Time.deltaTime, 0f, value.y * moveSpeed * 0.0015f * distance * Time.deltaTime);
-        //Debug.Log("distance" + distance);
-        //Debug.Log("value.x" + value.x);
-        //Debug.Log("value.y" + value.y);
+        movePosition = new Vector3(value.x * moveSpeed * 0.0015f * distance * Time.deltaTime, 0f,
+                                    value.y * moveSpeed * 0.0015f * distance * Time.deltaTime);
     }
     public void OnPointerDown(PointerEventData eventData)
     {

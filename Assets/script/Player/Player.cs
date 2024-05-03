@@ -88,21 +88,8 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
                 transform.position += thejoystick.movePosition;
                 if(walk == false)
                     StartCoroutine(MoveSoundCoroutine());
-                //NickNameText.transform.rotation = Quaternion.Euler(0,0,0);
-                //HealthImage.transform.rotation = Quaternion.Euler(0, 0, 0);
-                //HealthBarImage.transform.rotation = Quaternion.Euler(0, 0, 0);
-                
             }
-            //moveVec = new Vector3(hAxis, 0, vAxis).normalized;//
 
-            //if(wDown)
-            //{
-            //    transform.position += moveVec * speed*2f * Time.deltaTime;//
-            //}
-            //else
-            //transform.position += moveVec * speed * Time.deltaTime;//
-
-            //AN.SetBool("isWalk", moveVec != Vector3.zero);
             AN.SetBool("isWalk", thejoystick.movePosition != Vector3.zero);
             //anim.SetBool("isRun", wDown);//
 
@@ -134,15 +121,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
                     }
                 }
             }
-
-
-            /*if(Input.GetKeyDown(KeyCode.Space))
-            {
-                AN.SetBool("isShot", true);
-            }*/
-
         }
-
     }
     public void AttackBtn()
     {

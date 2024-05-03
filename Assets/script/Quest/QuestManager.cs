@@ -51,12 +51,6 @@ public class QuestManager : MonoBehaviour
         theMC.MissionCheck();
         if ((questcompleteIndex < questList.Count) && (completeArr[questcompleteIndex]))
         {
-            //if (id == questList[questId].npcId[questActionIndex]) //다음 npc랑대화해
-            //    questActionIndex++;
-            //if (questActionIndex == questList[questId].npcId.Length) //더이상 대화할 npc 없음
-            //    NextQuest();
-            //questActionIndex++;
-
             if (id == questList[questId].npcId[questActionIndex])
             {
                 questActionIndex++;
@@ -66,9 +60,6 @@ public class QuestManager : MonoBehaviour
                 theAudio.Play(clearSound);
                 NextQuest();
             }
-
-
-
         }
         if (!questList.ContainsKey(questId))
         {
@@ -100,32 +91,5 @@ public class QuestManager : MonoBehaviour
             questcompleteIndex++;
 
         }
-        //else
-        //{
-        //  questId = 0;
-        //  questActionIndex = 0;
-        //this.gameObject.SetActive(false);
-        //}
-
     }
-    /*
-    void ControlObject() //퀘스트에 사용하는 아이템 관리
-    {
-        switch(questId) //퀘스트가 진행되어 2번퀘스트가 실행되면 아이템 보이게함
-        {
-            case 10:
-                if (questActionIndex == 2)
-                    questObject[0].SetActive(true);
-                break;
-            case 20:
-                if (questActionIndex == 1)
-                    questObject[0].SetActive(false);
-                break;
-        }
-    }*/
-    void Update()
-    {
-        //theMC.MissionCheck();
-    }
-
 }
