@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
-        ExplainRect.anchoredPosition = anchoredPos + new Vector2(-100,-90);
+        ExplainRect.anchoredPosition = anchoredPos + new Vector2(400,300);
     }
 
     public void GetItem(int itemID, int _count)
